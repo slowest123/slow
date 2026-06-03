@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PKM PATI 1 - Dashboard</title>
+    <!-- Link Font Awesome untuk Ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Link Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --success: #27ae60;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #f4f7f6;
+        }
+
+        /* --- HERO SECTION ( Gambar Latar & Judul ) --- */
+        .hero {
+            /* Menggunakan gambar menarik dari Unsplash */
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 350px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 20px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        /* --- CONTAINER TOOLS --- */
+        .container {
+            max-width: 1200px;
+            margin: -50px auto 50px; /* Timpa bagian bawah gambar */
+            padding: 0 20px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .grid-tools {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        /* --- KARTU TOOLS --- */
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            color: var(--dark);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+
+        .icon-box {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            font-size: 0.9rem;
+            color: #7f8c8d;
+        }
+
+        /* Warna Specific Tools */
+        .bg-ibu { background: #e84393; } /* Pink */
+        .bg-anak { background: #f39c12; } /* Orange */
+        .bg-kkr { background: #8e44ad; } /* Ungu */
+        .bg-lansia { background: #7f8c8d; } /* Abu Tua */
+        .bg-simpus { background: #2980b9; } /* Biru Pekalongan */
+        .bg-sigizikesga { background: #27ae60; } /* Hijau */
+        
+        /* CKG Special Style (Spreadsheet) */
+        .bg-ckg {
+            background: linear-gradient(45deg, #11998e, #38ef7d);
+            grid-column: span 1; /*让它solo一点 if needed */
+            border: 3px solid #fff;
+            box-shadow: 0 10px 20px rgba(56, 239, 125, 0.4);
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: var(--primary);
+            color: white;
+            margin-top: 50px;
+        }
+
+        /* Responsive Text */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .container { margin-top: 20px; }
+        }
+    </style>
+</head>
+
+
+
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PKM PATI 1 - Dashboard</title>
+    <!-- Link Font Awesome untuk Ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Link Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --success: #27ae60;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #f4f7f6;
+        }
+
+        /* --- HERO SECTION ( Gambar Latar & Judul ) --- */
+        .hero {
+            /* Menggunakan gambar menarik dari Unsplash */
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 350px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 20px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        /* --- CONTAINER TOOLS --- */
+        .container {
+            max-width: 1200px;
+            margin: -50px auto 50px; /* Timpa bagian bawah gambar */
+            padding: 0 20px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .grid-tools {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+      /* --- KARTU TOOLS --- */
+.card {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--dark);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #f1f1f1;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efek hover modern */
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+    background: #ffffff;
+}
+
+/* Efek garis atas */
+.card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, #3498db, #6dd5fa);
+}
+
+/* Icon bulat modern */
+.icon-box {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: white;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+/* Judul */
+.card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    font-weight: 700;
+    color: #2c3e50;
+}
+
+/* Deskripsi */
+.card p {
+    font-size: 0.95rem;
+    color: #7f8c8d;
+    line-height: 1.5;
+}
+
+/* Semua tools background putih */
+.bg-ckg {
+    background: #ffffff !important;
+    border: 1px solid #eaeaea;
+}
+
+        /* --- FOOTER --- */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: var(--primary);
+            color: white;
+            margin-top: 50px;
+        }
+
+        /* Responsive Text */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .container { margin-top: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER / GAMBAR Judul -->
+    <header class="hero">
+        <h1>PKM PATI 1</h1>
+        <p>Sistem Informasi Kesehatan & Laporan bidan desa</p>
+    </header>
+
+    <!-- AREA MENU TOOLS -->
+    <div class="container">
+        <div class="grid-tools">
+
+            <!-- 1. IBU -->
+            <a href="https://docs.google.com/spreadsheets/d/1XjCetHUQhBllbgheZRzsTtVRhzV5NbYR7hqSd0Uk9rE/edit?gid=0#gid=0" target="_blank" class="card bg-ckg">
+                <div class="icon-box bg-ibu">
+                    <i class="fas fa-female"></i>
+                </div>
+                <h3>IBU</h3>
+                <p>Program Kesehatan Ibu & Hamil</p>
+            </a>
+
+            <!-- 2. ANAK -->
+            <a href="https://docs.google.com/spreadsheets/d/1048LDx5JzutRiGLOZluchxXuGDUrEQjuJzaZhmAonlI/edit?hl=id&gid=0#gid=0" target="_blank" class="card bg-ckg">
+                <div class="icon-box bg-anak">
+                    <i class="fas fa-child"></i>
+                </div>
+                <h3>ANAK</h3>
+                <p>Pemantauan Tumput Kembang Anak</p>
+            </a>
+
+            <!-- 3. KKR REMAJA -->
+            <a href="https://docs.google.com/spreadsheets/d/1cqJb-iLC2TCQ0JfDKpHtcGJFcq55tI7pZYe8MnsjWZo/edit?hl=id&gid=0#gid=0" target="_blank" class="card bg-ckg">
+                <div class="icon-box bg-kkr">
+                    <i class="fas fa-book-open"></i>
+                </div>
+                <h3>KKR REMAJA</h3>
+                <p>Kelompok Kaum Remaja</p>
+            </a>
+
+            <!-- 4. LANSIA -->
+            <a href="https://docs.google.com/spreadsheets/d/1cqJb-iLC2TCQ0JfDKpHtcGJFcq55tI7pZYe8MnsjWZo/edit?hl=id&gid=0#gid=0" target="_blank" class="card bg-ckg">
+                <div class="icon-box bg-lansia">
+                    <i class="fas fa-user-injured"></i>
+                </div>
+                <h3>LANSIA</h3>
+                <p>Layanan Lansia & geriatric</p>
+            </a>
+
+            <!-- 5. SIMPUS -->
+            <a href="http://192.168.88.2/j-care/" target="_blank" class="card bg-ckg">
+                <div class="icon-box bg-simpus">
+                    <i class="fas fa-book"></i>
+                </div>
+                <h3>SIMPUS</h3>
+                <p>Sistem Informasi Perpustakaan</p>
+            </a>
+
+            <!-- 6. SIGIZIKESGA -->
+            <a href="https://sigizikesga.kemkes.go.id/login_sisfo/index.php/login2.html" target="_blank" class="card bg-ckg">
+                <div class="icon-box bg-sigizikesga">
+                    <i class="fas fa-stethoscope"></i>
+                </div>
+                <h3>SIGIZIKESGA</h3>
+                <p>Sistem Gizi Kesehatan Gigi & Stunting</p>
+            </a>
+
+            <!-- 7. CKG (Langsung Spreadsheet) -->
+            <!-- Menggunakan tag anchor agar langsung ke link -->
+            <a href="https://sehatindonesiaku.kemkes.go.id/auth/login" target="_blank" class="card bg-ckg">
+                <div class="icon-box" style="background: white; color: #2980b9;">
+                    <i class="fas fa-file-excel"></i>
+                </div>
+                <h3>CKG</h3>
+                <p><strong>Cek Kesehatan Gratis:</strong><br>Masuk akun CKG</p>
+            </a>
+
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2027 PKM PATI 1.</p>
+    </footer>
+
+</body>
+</html>
